@@ -152,93 +152,13 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <fields>
-        <fullName>Benefits_Value__c</fullName>
-        <externalId>false</externalId>
-        <label>Benefits Value</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Contact__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Contact</label>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Timecards</relationshipLabel>
-        <relationshipName>Timecards</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Date</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Grant__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Grant</label>
-        <referenceTo>Opportunity</referenceTo>
-        <relationshipLabel>Timecards</relationshipLabel>
-        <relationshipName>Timecards</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Hours__c</fullName>
-        <externalId>false</externalId>
-        <label>Hours</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Salary_Wage_Value__c</fullName>
-        <externalId>false</externalId>
-        <label>Salary / Wage Value</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Work_Items__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Work Items</label>
-        <referenceTo>Grant_Work_Items__c</referenceTo>
-        <relationshipLabel>Timecards</relationshipLabel>
-        <relationshipName>Timecards</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <label>Timecards</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
+    <label>Staff</label>
     <nameField>
-        <displayFormat>TC-{0000}</displayFormat>
-        <label>Timecards Record Number</label>
+        <displayFormat>N-{0000}</displayFormat>
+        <label>Staff Record Number</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Timecards</pluralLabel>
+    <pluralLabel>Staff</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

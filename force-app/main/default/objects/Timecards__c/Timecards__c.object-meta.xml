@@ -152,78 +152,13 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <fields>
-        <fullName>Benefits_Rate__c</fullName>
-        <externalId>false</externalId>
-        <label>Benefits Rate</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Contact__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Contact</label>
-        <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Staff</relationshipLabel>
-        <relationshipName>Staff</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>End_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>End Date</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Grant__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Grant</label>
-        <referenceTo>Opportunity</referenceTo>
-        <relationshipLabel>Staff</relationshipLabel>
-        <relationshipName>Staff</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Salary_Wage_Rate__c</fullName>
-        <externalId>false</externalId>
-        <label>Salary / Wage Rate</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Start_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Start Date</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <label>Staff</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
+    <label>Timecards</label>
     <nameField>
-        <displayFormat>N-{0000}</displayFormat>
-        <label>Staff Record Number</label>
+        <displayFormat>TC-{0000}</displayFormat>
+        <label>Timecards Record Number</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Staff</pluralLabel>
+    <pluralLabel>Timecards</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
