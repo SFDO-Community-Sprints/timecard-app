@@ -1,6 +1,6 @@
 ### timecard-app: ideas and plans
 
-At the Detroit 2019 Sprint, a group considered the problem of tracking work toward a grant.  [TODO: finish high level business problem]
+At the Detroit 2019 Sprint, a group considered the problem of tracking the time staff members worked on a grant.  [TODO: finish high level business problem]
 
 ## Architecture
 In Salesforce:
