@@ -1,0 +1,23 @@
+minimum_cumulusci_version: '2.5.4'
+project:
+    name: timecard-app
+    package:
+        name:  Timecard App
+        api_version: '46.0'
+
+tasks:
+    robot:
+        options:
+            suites: robot/timecard-app/tests
+            options:
+                outputdir: robot/timecard-app/results
+
+    robot_testdoc:
+        options:
+            path: robot/timecard-app/tests
+            output: robot/timecard-app/doc/timecard-app_tests.html
+
+flows:
+    config_qa:
+        1.1:
+            task: deploy_qa_config
