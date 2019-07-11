@@ -1,5 +1,5 @@
 ### timecard-app
-A timecard app
+A timecard app for grant reporting
 
 ### Project Description
 This app is designed to track hours that staff work on a grant. The hours are reported by Grant Work Items (i.e., tasks) which are then multiplied by the hourly rate of the staff member to calculate a total amount of the salaries/wages/benefits used. This amount can then be used to report back to the grant funder.
