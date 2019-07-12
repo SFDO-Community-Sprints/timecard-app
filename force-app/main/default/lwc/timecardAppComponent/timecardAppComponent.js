@@ -34,6 +34,14 @@ export default class TimecardAppComponent extends LightningElement {
       
       if(this.grants.length > 0) {
         this.grantId = this.grants[0].grantId;
+
+        getGrantWorkItems({"grantId": this.grantId}).then((response) => {
+          this.grantWorkItems = response;
+    
+          if(this.grantWorkItems.length > 0) {
+            this.grantWorkItemId = this.grantWorkItems[0].Id;
+          }
+        });
       }
     }
   }
