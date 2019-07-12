@@ -31,7 +31,10 @@ export default class TimecardAppComponent extends LightningElement {
     console.log(this.contactId);
     if (data) {
       this.grants = data;
-      console.log(this.grants);
+      
+      if(this.grants.length > 0) {
+        this.grantId = this.grants[0].grantId;
+      }
     }
   }
 
@@ -39,6 +42,10 @@ export default class TimecardAppComponent extends LightningElement {
     this.grantId = e.target.value;
     getGrantWorkItems({"grantId": this.grantId}).then((response) => {
       this.grantWorkItems = response;
+
+      if(this.grantWorkItems.length > 0) {
+        this.grantWorkItemId = this.grantWorkItems[0].Id;
+      }
     });
   }
 
@@ -68,9 +75,12 @@ export default class TimecardAppComponent extends LightningElement {
     saveTimecardsRecord({ jsonString })
       .then(response => {
         console.log(JSON.stringify(response));
+        window.alert("Success!");
+        location.reload();
       })
       .catch(error => {
         console.log(JSON.stringify(error));
+        window.alert("Error!");
       })
   }
 
