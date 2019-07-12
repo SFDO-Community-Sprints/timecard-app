@@ -107,4 +107,27 @@ public with sharing class TimecardsAppController_TEST {
         // these should be the same size
         System.assertEquals(grantWorkItemsVerify.size(), grantWorkItems.size());
     }
+
+    @isTest
+    static void testSaveTimecardsRecord() {
+
+         // grab a random Contact ID that exists on Staff__c
+        Id contactId = [SELECT Contact__c FROM Staff__c LIMIT 1].Contact__c;
+
+        // grab a random Grant ID
+        Id grantId = [SELECT Grant__c FROM Grant_Work_Items__c LIMIT 1].Grant__c;
+
+        // create a Timecards__c record
+        Timecards__c timecard = new Timecards__c();
+        timecard.Grant__c = grantId;
+        timecard.Contact__c = contactId;
+        timecard.Date__c = Date.today();
+        timecard.Hours__c = 8;
+
+        // create a JSON string from this
+        String jsonString = JSON.serialize(timecard);
+
+        // pass this string into the controller method
+        TimecardsAppController.saveTimecardsRecord(jsonString);
+    }
 }
