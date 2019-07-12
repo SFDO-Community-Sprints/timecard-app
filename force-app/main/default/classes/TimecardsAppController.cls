@@ -38,9 +38,20 @@ public with sharing class TimecardsAppController {
 
         return grants;
     }
+    
+    /*
+        input: Grant ID
+        return: a collection of Grant_Work_Items__c records
+                related to that Opportunity (Grant) record
+    */
+    @AuraEnabled
+    public static List<Grant_Work_Items__c> getGrantWorkItems(Id grantId) {
+
+        return [SELECT Id, Name FROM Grant_Work_Items__c WHERE Grant__c = :grantId ORDER BY Name];
+    }
 
     private static List<Opportunity> getOpportunities(Id contactId) {
 
-        return [SELECT Id, Name FROM Opportunity WHERE Id IN (SELECT Grant__c FROM Staff__c WHERE Contact__c = :contactId)];
+        return [SELECT Id, Name FROM Opportunity WHERE Id IN (SELECT Grant__c FROM Staff__c WHERE Contact__c = :contactId) ORDER BY Name];
     }
 }
