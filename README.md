@@ -19,4 +19,4 @@ Created a mock-up of grant layout and timecard. Built the data architecture...De
 Exceptions, Aggregated Rollups, Spend-down with email notification when grant has been spent/used up
 
 ### Project Roadmap
-What is the ultimate vision for this project?
+Submit it for Open Source Commons.
