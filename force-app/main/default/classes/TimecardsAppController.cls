@@ -54,7 +54,7 @@ public with sharing class TimecardsAppController {
         input: Timecards__c SObject as JSON string
         return: ¯\_(ツ)_/¯
     */
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled
     public static void saveTimecardsRecord(String jsonString) {
         
         // deserialize this string into a Timecards__c class

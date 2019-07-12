@@ -30,14 +30,20 @@
       </div>
       <!-- Date -->
       <div class="slds-form-element">
-        <lightning-input type="date" name="date" label="Date"></lightning-input>
+        <label for="date" class="slds-form-element__label">Date</label>
+        <div class="slds-form-element__control">
+          <input id="date" type="date">     
+        </div>
       </div>
       <!-- Hours -->
       <div class="slds-form-element">
-        <lightning-input type="number" name="hours" label="Hours"></lightning-input>
+        <label for="hours" class="slds-form-element__label">Hours</label>
+        <div class="slds-form-element__control">
+          <input id="hours" type="number">     
+        </div>
       </div>
       <!-- Submit -->
-      <lightning-button variant="brand" label="Submit Timecard" title="Submit Timecard"></lightning-button>
+      <lightning-button variant="brand" label="Submit Timecard" title="Submit Timecard" onclick={handleSubmit}></lightning-button>
     </div>
   </lightning-card>
 </template>

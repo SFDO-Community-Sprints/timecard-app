@@ -11,7 +11,9 @@ export default class TimecardAppComponent extends LightningElement {
   @track grantId;
   @track grants;
   @track grantWorkItems;
-  @track timecardRecord;
+  @track grantWorkItemId;
+  @track date;
+  @track hours;
 
   connectedCallback() {
     let search = window.location.search.substring(1);
@@ -38,6 +40,25 @@ export default class TimecardAppComponent extends LightningElement {
     getGrantWorkItems({"grantId": this.grantId}).then((response) => {
       this.grantWorkItems = response;
     });
+  }
+
+  handleSubmit() {
+    let timecardRecord = { "sobjectType" : "Timecards__c" };
+    timecardRecord.Contact__c = this.contactId;
+    timecardRecord.Date__c = this.date;
+    timecardRecord.Grant__c = this.grantId;
+    timecardRecord.Hours__c = this.hours;
+    timecardRecord.Work_Items__c = this.grantWorkItemId;
+
+    let jsonString = JSON.stringify(timecardRecord);
+
+    saveTimecardsRecord({ jsonString })
+      .then(response => {
+        console.log(JSON.stringify(response));
+      })
+      .catch(error => {
+        console.log(JSON.stringify(error));
+      })
   }
 
   /*@wire(getGrantWorkItems, {grantId: "$grantId"}) wiredGrantWorkItems({error, data}) {
