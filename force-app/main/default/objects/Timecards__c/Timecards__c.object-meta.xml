@@ -154,9 +154,8 @@
     <enableStreamingApi>true</enableStreamingApi>
     <label>Timecards</label>
     <nameField>
-        <displayFormat>TC-{0000}</displayFormat>
-        <label>Timecards Record Number</label>
-        <type>AutoNumber</type>
+        <label>Timecards Record Name</label>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Timecards</pluralLabel>
     <searchLayouts/>
