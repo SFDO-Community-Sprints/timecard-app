@@ -1,19 +1,17 @@
-<apex:page >
+<apex:page showHeader="false" sidebar="false" showChat="false">
   <apex:includeLightning />
   <div id="container">
-</div>
+  </div>
 
-<script>
-$Lightning.use("c:lwcContainerApp", function()
-{
-$Lightning.createComponent(
-"c:timecardAppComponent",
-{},
-"container",
-function(cmp)
-{
-console.log('component created');
-});
-});
-</script>
+  <script>
+    $Lightning.use("c:lwcContainerApp", function () {
+      $Lightning.createComponent(
+        "c:timecardAppComponent",
+        {},
+        "container",
+        function (cmp) {
+          console.log('component created');
+        });
+    });
+  </script>
 </apex:page>
