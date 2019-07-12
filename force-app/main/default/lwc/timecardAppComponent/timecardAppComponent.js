@@ -7,11 +7,23 @@ import saveTimecardsRecord from '@salesforce/apex/TimecardsAppController.saveTim
 //const DELAY = 300;
 
 export default class TimecardAppComponent extends LightningElement {
-  @track contactId = new URLSearchParams(window.location.search).get('contactId');
+  @track contactId;
   @track grantId;
   @track grants;
   @track grantWorkItems;
   @track timecardRecord;
+
+  connectedCallback() {
+    let search = window.location.search.substring(1);
+    let urlParams = search.split('&');
+    let conId;
+    urlParams.map(item => {
+      let key = item.substring(0, item.indexOf('='));
+      let value = item.substring(item.indexOf('=') + 1);
+      if (key === 'contactId') { conId = value; }
+    });
+    this.contactId = conId;
+  }
 
   @wire(getGrants, {contactId: "$contactId"}) wiredGrants({error, data}) {
     console.log(this.contactId);

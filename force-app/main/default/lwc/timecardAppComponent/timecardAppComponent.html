@@ -7,8 +7,8 @@
         <label for="grant" class="slds-form-element__label">Grant</label>
         <div class="slds-form-element__control">
           <select id="grant">
-            <template if:true={wiredGrants}>
-              <template for:each={wiredGrants} for:item="grant">
+            <template if:true={grants}>
+              <template for:each={grants} for:item="grant">
                 <option key={grant.grantId} value={grant.grantId}>{grant.grantName}</option>
               </template>
             </template>        
@@ -20,8 +20,8 @@
         <label for="grant-work-item" class="slds-form-element__label">Work Item</label>
         <div class="slds-form-element__control">
           <select id="grant-work-item">
-            <template if:true={wiredGrantWorkItems}>
-              <template for:each={wiredGrantWorkItems} for:item="grantWorkItem">
+            <template if:true={grantWorkItems}>
+              <template for:each={grantWorkItems} for:item="grantWorkItem">
                 <option key={grantWorkItem.Id} value={grantWorkItem.Id}>{grantWorkItem.Name}</option>
               </template>
             </template>        
