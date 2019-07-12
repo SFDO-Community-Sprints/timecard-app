@@ -1,0 +1,12 @@
+<template>
+<lightning-card title="Timecard" icon-name="custom:custom14">
+<div class="slds-m-around_medium">
+Hello!
+<template if:true={grants}>
+  <template for:each={grants} for:item="grant">
+    <p key={grantId}>{grantName}</p>
+  </template>
+</template>
+</div>
+</lightning-card>    
+</template>

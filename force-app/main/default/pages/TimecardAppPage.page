@@ -7,7 +7,7 @@
 $Lightning.use("c:lwcContainerApp", function()
 {
 $Lightning.createComponent(
-"c:timecard-app",
+"c:timecardAppComponent",
 {},
 "container",
 function(cmp)
