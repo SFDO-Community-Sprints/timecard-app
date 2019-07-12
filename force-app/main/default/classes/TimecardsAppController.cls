@@ -16,7 +16,7 @@ public with sharing class TimecardsAppController {
         return: a collection of Grant records where that Contact
                 ID is populated in the lookup on Staff__c records
     */
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Grant> getGrants(Id contactId) {
         
         // create return collection
@@ -44,7 +44,7 @@ public with sharing class TimecardsAppController {
         return: a collection of Grant_Work_Items__c records
                 related to that Opportunity (Grant) record
     */
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static List<Grant_Work_Items__c> getGrantWorkItems(Id grantId) {
 
         return [SELECT Id, Name FROM Grant_Work_Items__c WHERE Grant__c = :grantId ORDER BY Name];
@@ -54,7 +54,7 @@ public with sharing class TimecardsAppController {
         input: Timecards__c SObject as JSON string
         return: ¯\_(ツ)_/¯
     */
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static void saveTimecardsRecord(String jsonString) {
         
         // deserialize this string into a Timecards__c class
