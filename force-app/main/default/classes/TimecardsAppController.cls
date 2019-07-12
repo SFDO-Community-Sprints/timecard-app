@@ -50,6 +50,20 @@ public with sharing class TimecardsAppController {
         return [SELECT Id, Name FROM Grant_Work_Items__c WHERE Grant__c = :grantId ORDER BY Name];
     }
 
+    /*
+        input: Timecards__c SObject as JSON string
+        return: ¯\_(ツ)_/¯
+    */
+    @AuraEnabled
+    public static void saveTimecardsRecord(String jsonString) {
+        
+        // deserialize this string into a Timecards__c class
+        Timecards__c timecard = (Timecards__c) JSON.deserialize(jsonString, Timecards__c.class);
+
+        // insert this record
+        insert timecard;
+    }
+
     private static List<Opportunity> getOpportunities(Id contactId) {
 
         return [SELECT Id, Name FROM Opportunity WHERE Id IN (SELECT Grant__c FROM Staff__c WHERE Contact__c = :contactId) ORDER BY Name];
