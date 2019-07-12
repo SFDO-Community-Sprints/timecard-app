@@ -10,7 +10,7 @@ Organizations who receive federal and state grants or any other grant that requi
 ### Project Team
 
 * Team Leader: Kathy Partin
-* List of Contributors: Adam Lincoln, Roger Mitchell, Lisa Sitkins
+* List of Contributors: Lisa Sitkins, Roger Mitchell, Adam Lincoln
 
 ### Project Team Accomplishments
 Created a mock-up of grant layout and timecard. Built the data architecture...Developed new objects and fields: Staff, Grant Work Items, Timecards; Logic (finding a rate for each person; Auto-name timecard record name; Tab views; Permission Sets, couple of reports. Added Grant Timecard App and Sites page. Building custom UI to be used by staff in the field.
