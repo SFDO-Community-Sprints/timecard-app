@@ -6,12 +6,12 @@
       <div class="slds-form-element">
         <label for="grant" class="slds-form-element__label">Grant</label>
         <div class="slds-form-element__control">
-          <select id="grant">
+          <select id="grant" onchange={handleSelectGrant}>
             <template if:true={grants}>
               <template for:each={grants} for:item="grant">
                 <option key={grant.grantId} value={grant.grantId}>{grant.grantName}</option>
               </template>
-            </template>        
+            </template>
           </select>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default class TimecardAppComponent extends LightningElement {
   handleSelectGrant(e) {
     this.grantId = e.target.value;
     getGrantWorkItems({"grantId": this.grantId}).then((response) => {
-        console.log(JSON.stringify(response));
+      this.grantWorkItems = response;
     });
   }
 
