@@ -1,12 +1,43 @@
 <template>
-<lightning-card title="Timecard" icon-name="custom:custom14">
-<div class="slds-m-around_medium">
-Hello!
-<template if:true={grants}>
-  <template for:each={grants} for:item="grant">
-    <p key={grantId}>{grantName}</p>
-  </template>
-</template>
-</div>
-</lightning-card>    
+  <lightning-card title="Timecard" icon-name="custom:custom14">
+    <div class="slds-m-around_medium">
+      Hello!
+      <!-- Grant -->
+      <div class="slds-form-element">
+        <label for="grant" class="slds-form-element__label">Grant</label>
+        <div class="slds-form-element__control">
+          <select id="grant">
+            <template if:true={wiredGrants}>
+              <template for:each={wiredGrants} for:item="grant">
+                <option key={grant.grantId} value={grant.grantId}>{grant.grantName}</option>
+              </template>
+            </template>        
+          </select>
+        </div>
+      </div>
+      <!-- Work Items -->
+      <div class="slds-form-element">
+        <label for="grant-work-item" class="slds-form-element__label">Work Item</label>
+        <div class="slds-form-element__control">
+          <select id="grant-work-item">
+            <template if:true={wiredGrantWorkItems}>
+              <template for:each={wiredGrantWorkItems} for:item="grantWorkItem">
+                <option key={grantWorkItem.Id} value={grantWorkItem.Id}>{grantWorkItem.Name}</option>
+              </template>
+            </template>        
+          </select>
+        </div>
+      </div>
+      <!-- Date -->
+      <div class="slds-form-element">
+        <lightning-input type="date" name="date" label="Date"></lightning-input>
+      </div>
+      <!-- Hours -->
+      <div class="slds-form-element">
+        <lightning-input type="number" name="hours" label="Hours"></lightning-input>
+      </div>
+      <!-- Submit -->
+      <lightning-button variant="brand" label="Submit Timecard" title="Submit Timecard"></lightning-button>
+    </div>
+  </lightning-card>
 </template>
