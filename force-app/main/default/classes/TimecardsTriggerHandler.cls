@@ -108,7 +108,7 @@ public with sharing class TimecardsTriggerHandler {
 
         return (staff.Start_Date__c == null 
                 && staff.End_Date__c == null)
-                || (staff.Start_Date__c <= timecard.Date__c
-                    && staff.End_Date__c >= timecard.Date__c);
+                || ((staff.Start_Date__c == null || staff.Start_Date__c <= timecard.Date__c)
+                    && (staff.End_Date__c == null || staff.End_Date__c >= timecard.Date__c));
     }
 }
