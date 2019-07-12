@@ -88,4 +88,23 @@ public with sharing class TimecardsAppController_TEST {
         // these should be the same size
         System.assertEquals(opps.size(), grants.size());
     }
+
+    @isTest
+    static void testGetGrantWorkItems() {
+
+        // grab a random Grant ID
+        Id grantId = [SELECT Grant__c FROM Grant_Work_Items__c LIMIT 1].Grant__c;
+
+        // this should not be null
+        System.assert(grantId != null);
+
+        // retrieve a list of Grant_Work_Items__c from the controller
+        List<Grant_Work_Items__c> grantWorkItems = TimecardsAppController.getGrantWorkItems(grantId);
+
+        // get a collection of Grant_Work_Items__c for that particular Grant
+        List<Grant_Work_Items__c> grantWorkItemsVerify = [SELECT Id FROM Grant_Work_Items__c WHERE Grant__c = :grantId];
+
+        // these should be the same size
+        System.assertEquals(grantWorkItemsVerify.size(), grantWorkItems.size());
+    }
 }
