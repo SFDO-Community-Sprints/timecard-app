@@ -19,7 +19,7 @@
       <div class="slds-form-element">
         <label for="grant-work-item" class="slds-form-element__label">Work Item</label>
         <div class="slds-form-element__control">
-          <select id="grant-work-item">
+          <select id="grant-work-item" onchange={handleSelectGrantWorkItem}>
             <template if:true={grantWorkItems}>
               <template for:each={grantWorkItems} for:item="grantWorkItem">
                 <option key={grantWorkItem.Id} value={grantWorkItem.Id}>{grantWorkItem.Name}</option>
@@ -32,14 +32,14 @@
       <div class="slds-form-element">
         <label for="date" class="slds-form-element__label">Date</label>
         <div class="slds-form-element__control">
-          <input id="date" type="date">     
+          <input id="date" type="date" onchange={handleDateChange}>
         </div>
       </div>
       <!-- Hours -->
       <div class="slds-form-element">
         <label for="hours" class="slds-form-element__label">Hours</label>
         <div class="slds-form-element__control">
-          <input id="hours" type="number">     
+          <input id="hours" type="number" onchange={handleHoursChange}>
         </div>
       </div>
       <!-- Submit -->

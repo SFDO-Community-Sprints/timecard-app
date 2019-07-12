@@ -42,6 +42,18 @@ export default class TimecardAppComponent extends LightningElement {
     });
   }
 
+  handleSelectGrantWorkItem(e) {
+    this.grantWorkItemId = e.target.value;
+  }
+
+  handleDateChange(e) {
+    this.date = e.target.value;
+  }
+
+  handleHoursChange(e) {
+    this.hours = e.target.value;
+  }
+
   handleSubmit() {
     let timecardRecord = { "sobjectType" : "Timecards__c" };
     timecardRecord.Contact__c = this.contactId;
@@ -51,6 +63,7 @@ export default class TimecardAppComponent extends LightningElement {
     timecardRecord.Work_Items__c = this.grantWorkItemId;
 
     let jsonString = JSON.stringify(timecardRecord);
+    console.log(jsonString);
 
     saveTimecardsRecord({ jsonString })
       .then(response => {
