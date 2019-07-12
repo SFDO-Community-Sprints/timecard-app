@@ -13,7 +13,7 @@ Organizations who receive federal and state grants or any other grant that requi
 * List of Contributors: Adam Lincoln, Roger Mitchell, Lisa Sitkins
 
 ### Project Team Accomplishments
-Developed new objects: Staff, Grant Work, Timecards. THIS NEEDS TO BE UPDATED.
+Developed new objects: Staff, Grant Work Items, Timecards. Some Timecard fields look up to field in Staff and Grant Work Items objects. 
 
 ### Contributing
 Create a mobile form app for the user to report their hours. 
