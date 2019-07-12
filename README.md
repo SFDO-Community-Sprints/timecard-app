@@ -13,7 +13,7 @@ Organizations who receive federal and state grants or any other grant that requi
 * List of Contributors: Adam Lincoln, Roger Mitchell, Lisa Sitkins
 
 ### Project Team Accomplishments
-Created a mock-up of grant layout and timecard. Built the data architecture...Developed new objects and fields: Staff, Grant Work Items, Timecards; Logic (finding a rate for each person; Auto-name timecard record name. Building custom UI to be used by staff in the field.
+Created a mock-up of grant layout and timecard. Built the data architecture...Developed new objects and fields: Staff, Grant Work Items, Timecards; Logic (finding a rate for each person; Auto-name timecard record name; Permission Sets. Building custom UI to be used by staff in the field.
 
 ### Contributing
 Reports
