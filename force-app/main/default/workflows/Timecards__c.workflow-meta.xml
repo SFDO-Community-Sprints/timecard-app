@@ -3,7 +3,7 @@
     <fieldUpdates>
         <fullName>Inserts_contact_name_in_timecard_record</fullName>
         <field>Name</field>
-        <formula>Contact__r.FirstName  &amp; &quot; &quot;&amp; Contact__r.LastName &amp; &quot;-&quot;&amp;  Grant__c</formula>
+        <formula>Contact__r.FirstName  &amp; &quot; &quot;&amp; Contact__r.LastName &amp; &quot;-&quot;&amp;   Grant__r.Name</formula>
         <name>Inserts contact name in timecard record</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
