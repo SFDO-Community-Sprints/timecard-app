@@ -69,4 +69,23 @@ public with sharing class TimecardsAppController_TEST {
 
         insert staffs;
     }
+
+    @isTest
+    static void testGetGrants() {
+
+        // grab a random Contact ID that exists on Staff__c
+        Id contactId = [SELECT Contact__c FROM Staff__c LIMIT 1].Contact__c;
+
+        // this should not be null
+        System.assert(contactId != null);
+
+        // retrieve a list of Grants from the controller
+        List<TimecardsAppController.Grant> grants = TimecardsAppController.getGrants(contactId);
+
+        // get a collection of Grants
+        List<Opportunity> opps = [SELECT Id FROM Opportunity WHERE Id IN (SELECT Grant__c FROM Staff__c WHERE Contact__c = :contactId)];
+
+        // these should be the same size
+        System.assertEquals(opps.size(), grants.size());
+    }
 }
