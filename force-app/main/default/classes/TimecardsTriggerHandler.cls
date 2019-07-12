@@ -43,12 +43,22 @@ public with sharing class TimecardsTriggerHandler {
                 for(Staff__c staff : oppStaff.get(timecard.Grant__c)) {
 
                     /*
-                        let' ensure this Staff__c record is the same Contact
-                        as our Timecards__c Contact
+                        let's ensure this Staff__c record is the same Contact
+                        as our Timecards__c Contact, and the dates are compatible
+                        between the Timecards__c and Staff__c
                     */
-                    if(timecard.Contact__c == staff.Contact__c) {
+                    if(timecard.Contact__c == staff.Contact__c
+                        && checkTimecardAndStaffDates(timecard, staff)) {
 
+                        if(staff.Benefits_Rate__c != null) {
 
+                            timecard.Benefits_Value__c = timecard.Hours__c * staff.Benefits_Rate__c;
+                        }
+
+                        if(staff.Salary_Wage_Rate__c != null) {
+
+                            timecard.Salary_Wage_Value__c = timecard.Hours__c * staff.Salary_Wage_Rate__c;
+                        }
                     }
                 }
             }
@@ -84,5 +94,21 @@ public with sharing class TimecardsTriggerHandler {
                 && timecard.Contact__c != null
                 && timecard.Hours__c != null 
                 && timecard.Date__c != null;
+    }
+
+    /*
+        return true if:
+            if the Staff__c record's Start_Date__c and End_Date__c are null, then there
+            are no restrictions on the Timecards__c record's Date__c 
+
+            if the Staff__c record's Start_Date__c is before/same as Timecards__c record's
+            Date__c and Staff record's End_Date__c is same/after Timecards__c record's Date__c
+    */
+    private static Boolean checkTimecardAndStaffDates(Timecards__c timecard, Staff__c staff) {
+
+        return (staff.Start_Date__c == null 
+                && staff.End_Date__c == null)
+                || (staff.Start_Date__c <= timecard.Date__c
+                    && staff.End_Date__c >= timecard.Date__c);
     }
 }
